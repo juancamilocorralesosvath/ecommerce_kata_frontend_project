@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
@@ -8,6 +9,7 @@ export default function Quote() {
 
     const [quote, setQuote] = useState({});
     //le estamos diciendo que se ejecute solo una vez, cuando se renderize
+    // eslint-disable-next-line
     useEffect(()=>{
         //una vez que nos aseguramos de que el token existe, hacemos la petiticion con la cabecera de configuracion
         //nos aseguramos de que montamos el componenete solamente si estamos autenticados.
@@ -29,7 +31,7 @@ export default function Quote() {
         }else{
             history.push('/');
         }
-    }, []);
+    });
     return(
         <>
         <Navbar />
@@ -39,8 +41,8 @@ export default function Quote() {
                 ?    <div className='row'>
                 <h2>{quote.name}</h2>
                 <span>{quote.id}</span>
-                <img src={quote.sprites.back_default} ></img>
-                <img src={quote.sprites.front_default} ></img>
+                <img alt='pkemon back' src={quote.sprites.back_default} ></img>
+                <img alt='pokemon front' src={quote.sprites.front_default} ></img>
                 </div>
                 : <h1>estamos teniendo problemas en la guarderia para traer tu pokemon...</h1>
         
