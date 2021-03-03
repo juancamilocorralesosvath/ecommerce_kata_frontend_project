@@ -11,7 +11,7 @@ export default function Signup(){
         if(inputs.password === inputs.password_confirmation){
           //primero eliminamos la confirmacion de la contra, no queremos enviar eso al back
           delete inputs.password_confirmation;
-          axios.post('holy moly, i dont know where to send this',inputs)
+          axios.post('https://ecomerce-master.herokuapp.com/api/v1/signup',inputs)
             .then(({data, status})=>{
               console.log(data,status);
               //no entiendo que es lo que esta agregando aqui🤔

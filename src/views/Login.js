@@ -3,14 +3,17 @@ import useForm from '../hooks/useForm';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import Navbar from '../Components/Navbar/indexNav';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default function Login(){
     const history = useHistory();
     const sendForm = (inputs) => {
         console.log('ejecute el sendForm desde el login!', inputs);
-        axios.post('i still dont know where to send this', inputs)
+        axios.post('https://ecomerce-master.herokuapp.com/api/v1/login', inputs)
             .then(({data, status})=>{
+                console.log("response status is:",status);
                 const { token } = data;
+                console.log(data)
                 window.localStorage.setItem('token', token);
                 //que es lo que estamos anadiendo a la memoria del historial?
                 //porque no le ponemos un nombre como '/user'?
@@ -26,8 +29,8 @@ export default function Login(){
         handleSubmit,
     }   =   useForm(sendForm,
             {
-                email: 'mali@devf.mx',
-                password: 'gatitos59'
+                email: 'example@example.com',
+                password: 'genericpassword'
             }
         )
         return(
