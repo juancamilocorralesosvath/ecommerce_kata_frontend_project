@@ -29,10 +29,10 @@ export default function NavbarComponent(){
                 ?
                 <div className="navbar-nava" > 
             <NavItem>
-                <Link to="#" >Hola {user.id} que nombre tan lindo tienes, se pronuncia {user.id}?</Link>
+                <Link to="/quote" >Hola {user.id} que nombre tan lindo tienes, se pronuncia {user.id}?</Link>
             </NavItem>
             <NavItem>
-                <Link to="#" >cerrar sesion</Link>
+                <Link to="/logout" >cerrar sesion</Link>
             </NavItem>
             </div>
             : 
