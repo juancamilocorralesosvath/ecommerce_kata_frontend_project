@@ -10,6 +10,7 @@ import Signup from './views/Signup';
 import Login from './views/Login';
 import Quote from './views/Quote';
 import Products from './views/Products';
+import CreateProductForm from './views/CreateProductForm';
 //este componente logout no va a er un componenete visual, sino uno netamente logico
 const Logout = () => {
     window.localStorage.removeItem('token');
@@ -26,7 +27,7 @@ export default function Routes() {
                 <Route exact path='/quote' component={Quote} />
                 <Route exact path='/logout' component={Logout} />
                 <Route exact path='/productsgallery' component={Products} />
-
+                <Route exact path='/createproduct' component={CreateProductForm} />
             </Switch>
         </Router>
     )

@@ -16,3 +16,51 @@ FIRST USER CREATED USING DEVF'S ECOMMERCE-BACKEND OMG
     "updatedAt": "2021-02-28T13:24:28.116Z",
     "__v": 0
 }
+SECOND USER (this is an ADMIN type of user)
+{
+    "role": "ADMIN",
+    "isActive": true,
+    "_id": "603fcce1e750860017759ffa",
+    "first_name": "Jhon",
+    "last_name": "Doe",
+    "email": "doe@google.com",
+    "birth_date": "1970-01-01T00:00:01.999Z",
+    "gender": "M",
+    "password": "$2b$10$VgatnZb9lNBysLYN8Gcn1eSOT1vjP1or8qsaEd.m4R4s7WE6Ig8DS",
+    "createdAt": "2021-03-03T17:52:33.319Z",
+    "updatedAt": "2021-03-03T17:52:33.319Z",
+    "__v": 0
+}
+FIRST PRODUCT CREATED YEI
+{
+    "isActive": true,
+    "_id": "603fcfbce750860017759ffd",
+    "product_name": "test",
+    "price": 900,
+    "category": "Grocery",
+    "brand": "juanchis's brand",
+    "sku": "ABCE",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABGmiBMnS95BhfNh229v_v1XURLGis1ni_rLXEhkvv7eG3qwpAm5J2D_MSqpMf6lbf_U&usqp=CAU",
+    "createdAt": "2021-03-03T18:04:44.692Z",
+    "updatedAt": "2021-03-03T18:04:44.692Z",
+    "__v": 0
+}
+SECOND ADMIN CREATED FROM THE APP:
+this is the data 
+{role: "ADMIN", isActive: true, _id: "60404e5e43bc4300173cdea7", email: "admin@admintest.com", first_name: "jane", …}
+createdAt: "2021-03-04T03:05:02.600Z"
+email: "admin@admintest.com"
+first_name: "jane"
+isActive: true
+last_name: "doe"
+password: "$2b$10$Fpw61LrBSDtXs8OlWJ4w1.GszMarK5AHB5LQTvaIE4ckVjGhqn5da"
+role: "ADMIN"
+updatedAt: "2021-03-04T03:05:02.600Z"
+__v: 0
+_id: "60404e5e43bc4300173cdea7"
+NORMAL:
+email: "admin@admintest.com"
+first_name: "jane"
+last_name: "doe"
+password: "1234"
+role: "ADMIN"

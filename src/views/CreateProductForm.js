@@ -4,14 +4,45 @@ import { useHistory } from 'react-router-dom';
 import Navbar from '../Components/Navbar/indexNav';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import useForm from '../hooks/useForm';
-export default function Signup(){
+export default function CreateProductForm(){
     const history = useHistory();
-    const sendForm = (inputs) => {
-        console.log('ejecute sendForm! y estos son los inputs:', inputs);
-        if(inputs.password === inputs.password_confirmation){
-          //primero eliminamos la confirmacion de la contra, no queremos enviar eso al back
-          delete inputs.password_confirmation;
-          axios.post('https://ecomerce-master.herokuapp.com/api/v1/signup',inputs)
+  
+    const sendProduct = (inputs) => {
+        const randomSkuGenerator = () => {
+            const arrayOfLetters= ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            let min= 1800;
+            let max = 3500;
+            return `${Math.floor( Math.random() * (max-min)+min)}${arrayOfLetters[Math.floor(Math.random()*arrayOfLetters.length-1)]}`;
+        }
+        const token = window.localStorage.getItem('token');
+        if(token){
+            console.log(token)
+            let skuValue = randomSkuGenerator();
+            console.log("let's see how good we are at encrypting hehe, sku value generated was:", skuValue);
+           /*  const config = {
+                headers:{
+                    'Authorization': `JWT ${token}`,
+                },
+                data:{
+                    ...inputs,
+                    'sku': skuValue,
+                }
+            } */
+            console.log('ejecute sendProduct! y esto fue lo que le envie al back:', {
+                ...inputs,
+                'sku': skuValue,
+                headers:{
+                  'Authorization': `JWT ${token}`,
+              },
+              });
+          axios.post('https://ecomerce-master.herokuapp.com/api/v1/item', {
+              ...inputs,
+              'sku': skuValue,
+            },{
+                headers:{
+                    'Authorization': `JWT ${token}`
+                }
+            })
             .then(({data, status})=>{
               console.log(data,status);
               //no entiendo que es lo que esta agregando aqui🤔
@@ -22,42 +53,45 @@ export default function Signup(){
             .catch(error=>{
               console.error(error.response.data)
             })
-        }else{
-          alert('las contras no coinciden, que paso ahi (°_°)/');
-        }
+        }        
     };
     //ojo, que aqui como callback le estamos pasando a sendForm
     const {
         inputs, 
         handleInputs,
         handleSubmit,
-    } = useForm(sendForm, {})
+    } = useForm(sendProduct, {})
     // it seems like inside of a form, button achieves special
     //characteristics
     return(
         <>
         <Navbar />
+        <h1>Fill te info for creating a new product</h1>
         <Form onSubmit={handleSubmit}>
-      <FormGroup>
-        <Label for="email">Email</Label>
-        <Input type="email" required value={inputs.email} onChange={handleInputs} name="email" id="email" placeholder="email" />
-      </FormGroup>
-      <FormGroup>
-        <Label for="first_name">first name</Label>
-        <Input type="text" value={inputs.first_name} onChange={handleInputs} name="first_name" id="first_name" placeholder="first name" />
-      </FormGroup>
-      <FormGroup>
-        <Label for="last_name">last name</Label>
-        <Input type="text" value={inputs.last_name} onChange={handleInputs} name="last_name" id="last_name" placeholder="last name" />
-      </FormGroup>
-      <FormGroup>
-        <Label for="password">Password</Label>
-        <Input type="password" value={inputs.password} onChange={handleInputs} name="password" id="password" placeholder="password" />
-      </FormGroup>
-      <FormGroup>
-        <Label for="password_confirmation">Password</Label>
-        <Input type="password" value={inputs.password_confirmation} onChange={handleInputs} name="password_confirmation" id="password_confirmation" placeholder="password confirmation" />
-      </FormGroup>
+        <FormGroup>
+            <Label for="product name">Product name</Label>
+            <Input type="text" required value={inputs.product_name} onChange={handleInputs} name="product name" id="product_name" placeholder="e.g: Computer" />
+        </FormGroup>
+        <FormGroup>
+            <Label for="product description">product description</Label>
+            <Input type="text" value={inputs.product_description} onChange={handleInputs} name="product description" id="product_description" placeholder="write in here all the details of your product" />
+        </FormGroup>
+        <FormGroup>
+            <Label for="price">price</Label>
+            <Input type="number" value={inputs.price} onChange={handleInputs} name="price" id="price" placeholder="e.g: 1234" />
+        </FormGroup>
+        <FormGroup>
+            <Label for="category">category</Label>
+            <Input type="text" value={inputs.category} onChange={handleInputs} name="category" id="category" placeholder="e.g: Books" />
+        </FormGroup>
+        <FormGroup>
+            <Label for="brand">brand</Label>
+            <Input type="text" value={inputs.brand} onChange={handleInputs} name="brand" id="brand" placeholder="e.g: Microsoft" />
+        </FormGroup>
+        <FormGroup>
+            <Label for="image">image link</Label>
+            <Input type="text" value={inputs.image} onChange={handleInputs} name="image" id="image" placeholder="place here the link of your image" />
+        </FormGroup>
       <Button>Submit</Button>
     </Form>
     </>

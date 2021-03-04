@@ -13,8 +13,9 @@ export default function Signup(){
           delete inputs.password_confirmation;
           axios.post('https://ecomerce-master.herokuapp.com/api/v1/signup',inputs)
             .then(({data, status})=>{
-              console.log(data,status);
-              //no entiendo que es lo que esta agregando aqui🤔
+              console.log('this is the data',data);
+              console.log('this is the status',status);
+
               history.push('/')
             })
             .catch(error=>{
@@ -55,6 +56,10 @@ export default function Signup(){
       <FormGroup>
         <Label for="password_confirmation">Password</Label>
         <Input type="password" value={inputs.password_confirmation} onChange={handleInputs} name="password_confirmation" id="password_confirmation" placeholder="password confirmation" />
+      </FormGroup>
+      <FormGroup>
+        <Label for="user_type">type of user</Label>
+        <Input type="text" value={inputs.user_type} onChange={handleInputs} name="user_type" id="role" placeholder="e.g: CUSTOMER or ADMIN" />
       </FormGroup>
       <Button>Submit</Button>
     </Form>

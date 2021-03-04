@@ -19,40 +19,6 @@ export default function NavbarComponent(){
     console.log(user);
     return(
       <>
-  {  /*     <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">
-            <img src={logo} alt="Rivendel logo" ></img>
-            Rivendel
-            </NavbarBrand>
-            <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-          <Collapse isOpen={!collapsed} navbar>
-            <Nav className="mr-auto" navbar>
-            {user
-                ?
-                <div className="navbar-nava" > 
-            <NavItem>
-                <Link to="/quote" >Hola {user.id} que nombre tan lindo tienes, se pronuncia {user.id}?</Link>
-            </NavItem>
-            <NavItem>
-                <Link to="/logout" >cerrar sesion</Link>
-            </NavItem>
-            </div>
-            : 
-            <div className="navbar-nava" > 
-            <NavItem>
-                <Link to="/login" >Iniciar sesion</Link>
-            </NavItem>
-            <NavItem>
-                <Link to="/signup" >Registrarse</Link>
-            </NavItem>
-            </div>
-            }
-             
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div> */}
       <div>
       <Navbar color="dark" light>
         <NavbarBrand href="/" className="mr-auto">
@@ -83,6 +49,9 @@ export default function NavbarComponent(){
             }
             <NavItem>
               <Link to='/productsgallery' >See our products</Link>
+            </NavItem>
+            <NavItem>
+              <Link to='/createproduct' >Add product</Link>
             </NavItem>
         <NavbarToggler onClick={toggleNavbar} className="mr-2" style={{color:'white',background:'white'}} />
         <Collapse isOpen={!collapsed} navbar>

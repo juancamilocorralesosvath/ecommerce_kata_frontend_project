@@ -15,8 +15,6 @@ export default function Login(){
                 const { token } = data;
                 console.log(data)
                 window.localStorage.setItem('token', token);
-                //que es lo que estamos anadiendo a la memoria del historial?
-                //porque no le ponemos un nombre como '/user'?
                 history.push('/');
             })
             .catch(error=>{
@@ -29,8 +27,7 @@ export default function Login(){
         handleSubmit,
     }   =   useForm(sendForm,
             {
-                email: 'example@example.com',
-                password: 'genericpassword'
+               
             }
         )
         return(
