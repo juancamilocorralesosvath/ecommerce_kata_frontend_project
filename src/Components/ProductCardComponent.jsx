@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 //GRACIAS PADRE, BENDITO Y ALABADO SEAS POR SIEMPRE!
-const ProductCardComponent = ({name, img, desc}) => {
+const ProductCardComponent = ({name, img, desc, id}) => {
   return (
     <div>
+        <Link to={`/productsgallery/${id}`} style={{textDecoration:'none'}} >
       <Card>
         <CardImg top width="100%" src={img} alt="Card image cap" />
         <CardBody>
@@ -16,6 +18,7 @@ const ProductCardComponent = ({name, img, desc}) => {
           <Button>Button</Button>
         </CardBody>
       </Card>
+      </Link>
     </div>
   );
 };

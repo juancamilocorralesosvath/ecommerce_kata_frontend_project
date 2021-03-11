@@ -53,19 +53,6 @@ export default function NavbarComponent(){
             <NavItem>
               <Link to='/createproduct' >Add product</Link>
             </NavItem>
-        <NavbarToggler onClick={toggleNavbar} className="mr-2" style={{color:'white',background:'white'}} />
-        <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar>
-            <h1>Categories</h1>
-            <span>Select the categories you'd like to search for a better experience</span>
-            <NavItem>
-              Components
-            </NavItem>
-            <NavItem>
-              GitHub
-            </NavItem>
-          </Nav>
-        </Collapse>
       </Navbar>
     </div>
     </>

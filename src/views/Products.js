@@ -49,7 +49,8 @@ export default function Products() {
                <ProductCardComponent  
                key={product.product_name} 
                name={product.product_name} 
-               desc={product.description} 
+               desc={product.description}
+               id={product._id} 
                img={product.image} />
                )
                :<h1>Lo sentimos mucho, hubo un problema en el stock</h1>      
