@@ -4,6 +4,9 @@ import { useHistory } from 'react-router-dom';
 import Navbar from '../Components/Navbar/indexNav';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import useForm from '../hooks/useForm';
+import Userfront from "@userfront/react";
+Userfront.init("8nwr7pbw");
+
 export default function Signup(){
     const history = useHistory();
     const sendForm = (inputs) => {
@@ -63,6 +66,17 @@ export default function Signup(){
       </FormGroup>
       <Button>Submit</Button>
     </Form>
+    <Demo />
     </>
     )
+}
+
+const SignupForm = Userfront.build({
+  toolId: "oarndk"
+});
+
+class Demo extends React.Component {
+  render () {
+    return <SignupForm />
+  }
 }

@@ -66,7 +66,7 @@ export default function CreateProductForm(){
     return(
         <>
         <Navbar />
-        <h1>Fill te info for creating a new product</h1>
+        <h1>Fill the info for creating a new product</h1>
         <Form onSubmit={handleSubmit}>
         <FormGroup>
             <Label for="product name">Product name</Label>

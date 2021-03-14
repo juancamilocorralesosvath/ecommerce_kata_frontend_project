@@ -10,17 +10,17 @@ const Example = (props) => {
     <div style={{display:'flex', alignItems:'space-between' ,height:'15em', marginTop:'40px', marginBottom:'40px', width:'100%'}} >
       <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333', }}>
         <CardTitle tag="h5">Special Title Treatment</CardTitle>
-        <image src={secure} style={{height:'30px', width:'30px'}} ></image>
+        <img src={secure} style={{height:'30px', width:'30px'}} ></img>
 
       </Card>
       <Card body inverse color="primary" >
         <CardTitle tag="h5">Special Title Treatment</CardTitle>
-        <image src={trust} ></image>
+        <img src={trust} ></img>
 
       </Card>
       <Card body inverse color="success">
         <CardTitle tag="h5">Special Title Treatment</CardTitle>
-        <image src={guaranteed} ></image>
+        <img src={guaranteed} ></img>
       </Card>
     </div>
   );

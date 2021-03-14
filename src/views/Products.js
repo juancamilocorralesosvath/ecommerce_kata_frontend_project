@@ -18,7 +18,7 @@ export default function Products() {
     }
     //le estamos diciendo que se ejecute solo una vez, cuando se renderize
     useEffect(()=>{
-      setTimeout(petitionToAPI,1500)
+      setTimeout(petitionToAPI,500)
     },[]);
    /*  const showProducts = (productsList) => {
        let listOfProducts = productsList.map(product=>{

@@ -1,27 +1,38 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import payload from '../../utils/payload';
 import {
-    Collapse,
     Navbar,
     NavbarBrand,
-    Nav,
     NavItem,
-    NavbarToggler
   } from 'reactstrap';
   import logo from './../../Assets/SVG/logo.svg';
   import shopping_cart from '../../Assets/SVG/shopping_cart.svg'
-export default function NavbarComponent(){
-    const [collapsed, setCollapsed] = useState(true);
-    const toggleNavbar = () => setCollapsed(!collapsed);
-
+  import Userfront from "@userfront/react";
+  import './NavbarComponent.css'
+  Userfront.init("8nwr7pbw");
+  const LogoutButton = Userfront.build({
+    toolId: "bmakrl"
+  });
+  
+  export default function NavbarComponent(){
+    const history = useHistory();
+    const enableCreateProduct = () => {
+      //if we don't find an access token, we redirect the user to the login page
+      //if we do find it, we redirect him/her to the 'createproduct' page
+      if(!Userfront.accessToken()){
+        history.push('/login');
+      }else{
+        history.push('/createproduct');
+      }
+    }
     const user = payload();
     console.log(user);
     return(
       <>
       <div>
       <Navbar color="dark" light>
-        <NavbarBrand href="/" className="mr-auto">
+        <NavbarBrand href="/" className="navbar-brand">
           <img src={logo} style={{height:'100px',width:'50px'}} alt="Rivendel logo" ></img>
           <h1 style={{color:'white', display:'inline'}} >Rivendel</h1>
         </NavbarBrand>
@@ -51,8 +62,10 @@ export default function NavbarComponent(){
               <Link to='/productsgallery' >See our products</Link>
             </NavItem>
             <NavItem>
-              <Link to='/createproduct' >Add product</Link>
+              <button onClick={enableCreateProduct} >Add product</button>
             </NavItem>
+
+        <LogoutButton/>
       </Navbar>
     </div>
     </>
