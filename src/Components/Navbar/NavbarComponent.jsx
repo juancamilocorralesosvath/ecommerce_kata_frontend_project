@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import payload from '../../utils/payload';
 import {
@@ -58,9 +58,6 @@ import {
             </NavItem>
             </div>
             }
-            <NavItem>
-              <Link to='/productsgallery' >See our products</Link>
-            </NavItem>
             <NavItem>
               <button onClick={enableCreateProduct} >Add product</button>
             </NavItem>

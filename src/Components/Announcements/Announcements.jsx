@@ -2,28 +2,30 @@ import React from 'react';
 import { Card,CardTitle } from 'reactstrap';
 import trust from '../../Assets/SVG/trust.svg'
 import secure from '../../Assets/SVG/secure-shopping.svg'
-import guaranteed from '../../Assets/SVG/guaranteed.svg'
+import money from '../../Assets/SVG/money.svg'
+import './Announcements.css'
 
 
-const Example = (props) => {
+const Announcements = (props) => {
   return (
-    <div style={{display:'flex', alignItems:'space-between' ,height:'15em', marginTop:'40px', marginBottom:'40px', width:'100%'}} >
-      <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333', }}>
-        <CardTitle tag="h5">Special Title Treatment</CardTitle>
-        <img src={secure} style={{height:'30px', width:'30px'}} ></img>
-
+    <div className='container' >
+      <Card body className='my-card-body' >
+        <CardTitle tag="h2" className='card-title' >Shop with confidence</CardTitle>
+        <CardTitle tag="h5" className='card-title' >all of our partners are renowned buyers</CardTitle>
+        <img src={secure} alt='secure-buying-logo' ></img>
       </Card>
-      <Card body inverse color="primary" >
-        <CardTitle tag="h5">Special Title Treatment</CardTitle>
-        <img src={trust} ></img>
-
+      <Card body className='my-card-body' >
+        <CardTitle tag="h2" className='card-title' >Best products in the market</CardTitle>
+        <CardTitle tag="h5" className='card-title' >We offer the best quality</CardTitle>
+        <img src={trust} alt='trust-buying-logo' ></img>
       </Card>
-      <Card body inverse color="success">
-        <CardTitle tag="h5">Special Title Treatment</CardTitle>
-        <img src={guaranteed} ></img>
+      <Card body className='my-card-body' >
+        <CardTitle tag="h2" className='card-title' >Secure payment method</CardTitle>
+        <CardTitle tag="h5" className='card-title' >We use state-of-the-art technology</CardTitle>
+        <img src={money} alt='guaranteed-buying-logo' ></img>
       </Card>
     </div>
   );
 };
 
-export default Example;
+export default Announcements;

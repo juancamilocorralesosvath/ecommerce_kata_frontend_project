@@ -1,0 +1,15 @@
+.carousel-container{
+    height: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.announcements-container{
+    width: 100vw;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;    
+}

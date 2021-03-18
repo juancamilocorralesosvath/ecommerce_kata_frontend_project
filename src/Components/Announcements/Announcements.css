@@ -1,0 +1,35 @@
+.container{
+
+        display: flex; 
+        align-items: space-between;
+        height:15em; 
+        margin-top:40px; 
+        margin-bottom:40px; 
+        width:100%;
+        width: 100vw;
+}
+.card-title{
+    color: black;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: width, height;
+    transition-timing-function: ease-in-out;
+}
+.my-card-body:hover{
+    height: 300px;
+    width: 400px;
+    box-shadow: 10px 10px 10px 10px;
+    background-color: rgba(209, 202, 202, 0.781);
+    cursor: pointer;
+}
+@media only screen and (max-width: 500px) {
+    .container{
+        margin-top: 40px !important;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .my-card-body{
+        margin-top: 40px;
+        padding-bottom: 200px !important;
+    }
+}

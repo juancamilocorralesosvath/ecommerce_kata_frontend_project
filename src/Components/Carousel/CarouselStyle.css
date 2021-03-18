@@ -1,0 +1,16 @@
+.my-carousel{
+    height: 100%;
+    width: 100%;
+}
+
+.my-carousel-item{
+    height: 100%;
+    width: 100%;
+}
+.carousel-item-img{
+     height: 50em;
+     width: 100%; 
+}
+.my-carousel-indicators{
+    margin-top: 100px;
+}

@@ -1,20 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 //por que no lo puedo importar de la manera en que lo hace Mali?
 import Navbar from '../Components/Navbar/indexNav';
 import CarouselComponent from '../Components/Carousel/CarouselComponent';
 import Announcements from '../Components/Announcements/Announcements';
+import '../styles/Home-style.css'
 export default function Home() {
     return(
         <>
             <Navbar/>
-            <div className='container' style={{ boxShadow:'10px 10px 10px'}} >
+            <main className='main' >
+            <div className='carousel-container' style={{ boxShadow:'10px 10px 10px'}} >
                 <CarouselComponent />
             </div>
-            <div className='container' style={{width: '100%'}} >
-                <Announcements/>
+            <div className='container' >
+            <Announcements/>
             </div>
-            <h1>Bienvenidos a mi ecommerce!</h1>
-
+            </main>
+            <Link to='productsgallery' >
+            <h1 style={{textAlign:'center'}} >Ready to buy?</h1>
+            </Link>
         </>
     )
 }

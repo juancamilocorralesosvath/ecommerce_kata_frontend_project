@@ -6,22 +6,22 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from 'reactstrap';
-import './CarouselStyle.scss'
+import './CarouselStyle.css'
 const items = [
   {
     src: 'https://store-images.s-microsoft.com/image/apps.13367.13817186670444302.148c432a-9fce-4c7d-bf13-8a2bd3a527b3.f26b74f0-8b1f-41eb-a82f-06843ec33473',
-    altText: 'Slide 1',
-    caption: 'Slide 1'
+    altText: 'The Best Games',
+    caption: 'from Halo to Skyrim and everything in between!'
   },
   {
     src: 'https://image.freepik.com/vector-gratis/plantilla-diseno-cartel-anuncio-promocion-venta_53876-57885.jpg',
-    altText: 'Slide 2',
-    caption: 'Slide 2'
+    altText: 'The best offers',
+    caption: 'Go nuts with our prices!'
   },
   {
     src: 'https://image.freepik.com/vector-gratis/plantilla-diseno-cartel-anuncio-promocion-venta_53876-57888.jpg',
-    altText: 'Slide 3',
-    caption: 'Slide 3'
+    altText: 'The best quality in the market',
+    caption: '100% secure buying!'
   }
 ];
 
@@ -48,24 +48,24 @@ const CarouselComponent = (props) => {
 
   const slides = items.map((item) => {
     return (
-      <CarouselItem
+      <CarouselItem className='my-carousel-item'
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
-        <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+        <img className='carousel-item-img' src={item.src} alt={item.altText} />
+        <CarouselCaption captionText={item.caption} captionHeader={item.altText} />
       </CarouselItem>
     );
   });
 
   return (
-    <Carousel
+    <Carousel className='my-carousel'
       activeIndex={activeIndex}
       next={next}
       previous={previous}
     >
-      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+      <CarouselIndicators className='my-carousel-indicators' items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
       {slides}
       <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
       <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
