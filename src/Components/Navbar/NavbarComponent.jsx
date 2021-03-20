@@ -27,42 +27,45 @@ import {
       }
     }
     const user = payload();
-    console.log(user);
+    console.log('this is the current user:',user);
     return(
       <>
       <div>
-      <Navbar color="dark" light>
+      <Navbar className='my-navbar-component' color="dark" light>
         <NavbarBrand href="/" className="navbar-brand">
-          <img src={logo} style={{height:'100px',width:'50px'}} alt="Rivendel logo" ></img>
-          <h1 style={{color:'white', display:'inline'}} >Rivendel</h1>
+          <img src={logo} className='rivendel-logo'  alt="Rivendel logo" ></img>
+          <h1 className='brand-title' >Rivendel</h1>
         </NavbarBrand>
-          <input style={{width: '50%',}} type="text" placeholder="search something here!"  />
-          <img src={shopping_cart} style={{height:'100px',width:'50px'}} alt="shopping cart" ></img>
+          <input className='search-bar' type="text" placeholder="search something here!"  />
         {user
                 ?
-                <div className="navbar-nava" > 
-            <NavItem>
-                <Link to="/quote" >Hola {user.id} que nombre tan lindo tienes, se pronuncia {user.id}?</Link>
-            </NavItem>
-            <NavItem>
-                <Link to="/logout" >cerrar sesion</Link>
-            </NavItem>
-            </div>
+                <div className="navbar-user-items" > 
+                  <NavItem>
+                      <Link to="/profile" >Hola {user.id} que nombre tan lindo tienes, se pronuncia {user.id}?</Link>
+                  </NavItem>
+                  <NavItem>
+                      <Link to="/logout" >cerrar sesion</Link>
+                  </NavItem>
+                  <NavItem>
+                  <button onClick={enableCreateProduct} >Add product</button>
+                  </NavItem>
+                  <LogoutButton/>
+                </div>
             : 
-            <div className="navbar-nava" > 
-            <NavItem>
-                <Link to="/login" >Iniciar sesion</Link>
-            </NavItem>
-            <NavItem>
-                <Link to="/signup" >Registrarse</Link>
-            </NavItem>
+            <div className="navbar-user-items" > 
+              <NavItem>
+                <button className='user-items-btn' >
+                <Link style={{textDecoration:'none', color:'black'}} to="/login" >Iniciar sesion</Link>
+                </button>
+              </NavItem>
+              <NavItem>
+              <button className='user-items-btn' >
+                <Link style={{textDecoration:'none',color:'black'}} to="/signup" >Registrarse</Link>
+              </button>
+              </NavItem>
             </div>
             }
-            <NavItem>
-              <button onClick={enableCreateProduct} >Add product</button>
-            </NavItem>
-
-        <LogoutButton/>
+            <img src={shopping_cart} className='shopping-cart' alt="shopping cart" ></img>
       </Navbar>
     </div>
     </>

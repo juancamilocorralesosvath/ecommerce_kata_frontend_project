@@ -12,12 +12,12 @@
     color: black;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    transition: width, height;
+    /* transition: width, height; */
     transition-timing-function: ease-in-out;
 }
 .my-card-body:hover{
-    height: 300px;
-    width: 400px;
+    /* height: 300px;
+    width: 400px; */
     box-shadow: 10px 10px 10px 10px;
     background-color: rgba(209, 202, 202, 0.781);
     cursor: pointer;

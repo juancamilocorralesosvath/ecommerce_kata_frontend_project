@@ -41,7 +41,7 @@ export default function Products() {
     return(
         <>
         <Navbar />
-        <h1>PRODUCTS IN STOCK</h1>
+        {/* this makes the magic */}
         <CardColumns>
             {
                products

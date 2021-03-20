@@ -3,4 +3,35 @@
     justify-content: center;
     align-items: center;
     height: 50px;
+    margin-right: 0 !important;
+}
+.search-bar{
+    border-radius: 5px;
+}
+.rivendel-logo{
+    height: 100%;
+}
+.brand-title{
+    color: white;
+    display: inline;
+    margin-bottom: 0;
+}
+.shopping-cart{
+    height: 40px;
+}
+.navbar-user-items{
+    display: flex;
+}
+.user-items-btn{
+    border-radius: 30px;
+    width: 7em;
+    height: 2.5em;
+    background-color: rgb(253, 242, 242);
+}
+.user-items-btn:hover{
+    background-color: rgb(165, 243, 92);
+    box-shadow: 2.5px 2.5px 5px rgb(165, 243, 92);
+}
+.my-navbar-component{
+    
 }

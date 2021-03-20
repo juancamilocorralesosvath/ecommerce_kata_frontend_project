@@ -24,7 +24,7 @@ const Successful = () =>{
         <h1>Awesome! as you are logged in, you can buy this product. Rejoice my friend, rejoice!</h1>
         <Link to="/" >yei!😄</Link>
         </>
-            )
+    )
 }
 const Failed = () =>{
     return(

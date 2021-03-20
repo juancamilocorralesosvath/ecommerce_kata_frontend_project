@@ -1,12 +1,12 @@
-import React from 'react';
-/* import React, { useEffect, useState } from 'react';
+//import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useForm from '../hooks/useForm';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import Navbar from '../Components/Navbar/indexNav';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'; */
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'; 
 
-import Userfront from "@userfront/react";
+/* import Userfront from "@userfront/react";
 Userfront.init("8nwr7pbw");
 const LoginForm = Userfront.build({
     toolId: "rmadok"
@@ -16,8 +16,8 @@ const Login = React.memo( ()=>{
     return <LoginForm/>
 })
 export default Login;  
- 
-/* export default function Login(){
+  */
+ export default function Login(){
     const history = useHistory();
     const sendForm = (inputs) => {
         console.log('ejecute el sendForm desde el login!', inputs);
@@ -59,4 +59,4 @@ export default Login;
             </Form>
         </>
         )
-}  */
+}  

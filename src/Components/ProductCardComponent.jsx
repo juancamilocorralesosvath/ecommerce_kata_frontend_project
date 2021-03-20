@@ -5,8 +5,13 @@ import {
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 import '../styles/ProductCardComponent-style.css'
+import noImageAvailable from './../Assets/images/no-image-available.png';
 //GRACIAS PADRE, BENDITO Y ALABADO SEAS POR SIEMPRE!
 const ProductCardComponent = ({name, img, desc, id, price}) => {
+  //GLORIA A DIOS!
+  if(!img){
+    img = noImageAvailable;
+  }
   return (
         <Link to={`/productsgallery/${id}`} style={{textDecoration:'none'}} >
       <Card className='product-card' >
