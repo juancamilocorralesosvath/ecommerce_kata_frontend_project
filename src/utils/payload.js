@@ -7,10 +7,12 @@ export default function payload() {
     if(token){
         // porque? porque el JWT viene en tres partes, cada una de ellas separadas por un punto
         const [header, payload, signature] = token.split('.');
-        console.log(header, signature)
+        console.log('this is the header:',header)
+        console.log('this is the signature:',signature)
         //el payload es un objeto
         const base64 = payload.replace('+','-').replace('/','_');
         const payloadObject = JSON.parse(window.atob(base64));
+        console.log('this is the payloadObject:', payloadObject)
         return payloadObject;
     }else{
         return null;

@@ -7,6 +7,23 @@
 }
 .search-bar{
     border-radius: 5px;
+    border: none;
+    width: 556px;
+    margin-left: 0px;
+    margin-right: 22px;
+    margin-top: 15px;
+    padding-top: 24px;
+}
+.search-logo{
+    margin-top: 37px;
+    width: 40px;
+}
+.search-logo-and-input{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 .rivendel-logo{
     height: 100%;
@@ -18,20 +35,26 @@
 }
 .shopping-cart{
     height: 40px;
+    margin-top: 20px;
 }
 .navbar-user-items{
     display: flex;
 }
 .user-items-btn{
     border-radius: 30px;
-    width: 7em;
-    height: 2.5em;
-    background-color: rgb(253, 242, 242);
+    width: 14em;
+    height: 3em;
+    background-color: rgba(46, 43, 43, 0.835);
 }
 .user-items-btn:hover{
     background-color: rgb(165, 243, 92);
     box-shadow: 2.5px 2.5px 5px rgb(165, 243, 92);
 }
-.my-navbar-component{
-    
+.my-dropdown-toggle-user-items{
+    padding: 0 !important;
+}
+.user-info-and-cart-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

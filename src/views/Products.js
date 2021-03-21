@@ -47,7 +47,7 @@ export default function Products() {
                products
                ? products.map(product=> 
                <ProductCardComponent
-               key={product.product_name} 
+               key={product._id} 
                name={product.product_name} 
                desc={product.description}
                id={product._id} 
