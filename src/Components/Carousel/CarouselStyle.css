@@ -7,9 +7,13 @@
     height: 100%;
     width: 100%;
 }
+.carousel-img-div{
+
+}
+/* no tengo idea de como hacer para que las imagenes no se me vuelvan como 'hamburguesas' */
 .carousel-item-img{
-     height: 50em;
-     width: 100%; 
+    height: 50em;
+    width: 100%; 
 }
 .my-carousel-indicators{
     margin-top: 100px;

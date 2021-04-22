@@ -14,6 +14,7 @@ export default function Products() {
         try{
             let response = await axios.get('https://ecomerce-master.herokuapp.com/api/v1/item');
             setProducts(response.data);
+            console.log(response.data)
         }catch(error){
             alert('courrio un error al traer los productos!');
         }

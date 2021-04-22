@@ -4,7 +4,8 @@ import useForm from '../hooks/useForm';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 // import Navbar from '../Components/Navbar/indexNav';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'; 
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import '../styles/Signup-style.css'; 
 /* 
 import Userfront from "@userfront/react";
 Userfront.init("8nwr7pbw");
@@ -41,16 +42,21 @@ export default function Login(){
         
         return(
         <>
-            <Form onSubmit={handleSubmit}>
-                <FormGroup>
+            <Form className='my-awesome-form' onSubmit={handleSubmit}>
+            <h1>In order to buy, please Login to your account</h1>
+                <FormGroup className='whats-inside' >
                     <Label for="email">Email</Label>
                     <Input type="email" required value={inputs.email} onChange={handleInputs} name="email" id="email" placeholder="example@example.com" />
                 </FormGroup>
-                <FormGroup>
+                <FormGroup className='whats-inside' >
                     <Label for="password">Password</Label>
                     <Input type="password" value={inputs.password} onChange={handleInputs} name="password" id="password" placeholder="SuperSecret1234" />
                 </FormGroup>
-                <Button>Submit</Button>
+                <Button className='user-items-btn' >login</Button>
+                <p>Don't have an account with us? Signup now! it's super easy!</p>
+                <Button onClick={()=>{
+                    history.push('/signup')
+                }} className='user-items-btn'>Singup</Button>
             </Form>
         </>
         )

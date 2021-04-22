@@ -2,8 +2,7 @@
     height: 350px;
 }
 .product-card:hover{
-    box-shadow: 10px 10px 10px 10px rgb(250, 248, 149);
-    background-color: rgba(198, 255, 172, 0.89);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.849);
 }
 .product-img{
     height: 50%;
@@ -20,6 +19,12 @@
 .product-card-text{
     margin-bottom: 0;
 }
+.product-card-btn-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 @media screen and (max-width: 870px) and (min-width: 550px) {
     .product-card-text{
         display: none;

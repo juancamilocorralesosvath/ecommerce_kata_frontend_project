@@ -1,13 +1,14 @@
 import React,{ useState, useEffect } from 'react';
-import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
-} from 'reactstrap';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import Navbar from '../Components/Navbar/indexNav';
+import BuyModal from '../Components/Modals/BuyModal';
+import '../styles/IndividualProductPage-style.css'
+
 //GRACIAS PADRE, BENDITO Y ALABADO SEAS POR SIEMPRE!
 const ProductCardComponent = () => {
+    //const modal = <BuyModal></BuyModal>;
     const history = useHistory();
     const [product, setProduct] = useState({});
     //aqui obtengo la informacion desde la URL
@@ -21,28 +22,41 @@ const ProductCardComponent = () => {
         }
     }
     const tokenValidation = () => {
+        let response = '';
         const token = window.localStorage.getItem('token');
         if(token){
-            history.push('/successful');
+          //history.push('/successful');
+          response = <h1>great! you are logged in!</h1>
         }else{
-            history.push('/failed');
+          //history.push('/login');
+          response = <h1>oops! I'm sorry cowboy! but I'm afraid you'll need to log in or create an account...</h1>
+
         }
+        return response;
     }
     useEffect(()=>{
         petitionToAPI();
       },[]);
+      const myAwesomeAndOriginalButton = <button className='user-items-btn' style={{color:'white'}} >
+      Buy
+      </button>;
   return (
-    <div>
-      <Card>
-        <CardImg top width="100%" src={product.image} alt="Card image cap" />
-        <CardBody>
-          <CardTitle tag="h5">{product.product_name}</CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
-          <CardText>{product.description}</CardText>
-          <Button onClick={tokenValidation} >I want it!</Button>
-        </CardBody>
-      </Card>
+    <>
+    <Navbar/>
+    <div className='individual-product-info' >
+      <img id='product-img' src={product.image} ></img>
+      <div className='title-and-description' >
+        <h1>{product.product_name}</h1>
+        <p>{product.description}</p>
+      </div>
+      <h2>Price: ${product.price}</h2>
+      {/* onClick={tokenValidation} */}
+      {/* thanks Maui! */}
+      <BuyModal buttonLabel={myAwesomeAndOriginalButton} title={tokenValidation()} >
+        <h1>Hello world</h1>
+      </BuyModal>
     </div>
+    </>
   );
 };
 

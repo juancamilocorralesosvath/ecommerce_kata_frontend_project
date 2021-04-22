@@ -4,8 +4,9 @@ import { useHistory } from 'react-router-dom';
 import Navbar from '../Components/Navbar/indexNav';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import useForm from '../hooks/useForm';
-import Userfront from "@userfront/react";
-Userfront.init("8nwr7pbw");
+import '../styles/Signup-style.css';
+/* import Userfront from "@userfront/react";
+Userfront.init("8nwr7pbw"); */
 
 export default function Signup(){
     const history = useHistory();
@@ -39,38 +40,38 @@ export default function Signup(){
     return(
         <>
         <Navbar />
-        <Form onSubmit={handleSubmit}>
-      <FormGroup>
+        <Form onSubmit={handleSubmit} className='my-awesome-form' >
+      <FormGroup className='whats-inside' >
         <Label for="email">Email</Label>
-        <Input type="email" required value={inputs.email} onChange={handleInputs} name="email" id="email" placeholder="email" />
+        <Input className='my-form-input' type="email" required value={inputs.email} onChange={handleInputs} name="email" id="email" placeholder="example@example.com" />
       </FormGroup>
-      <FormGroup>
+      <FormGroup className='whats-inside' >
         <Label for="first_name">first name</Label>
-        <Input type="text" value={inputs.first_name} onChange={handleInputs} name="first_name" id="first_name" placeholder="first name" />
+        <Input className='my-form-input' type="text" value={inputs.first_name} onChange={handleInputs} name="first_name" id="first_name" placeholder="Jhon" />
       </FormGroup>
-      <FormGroup>
+      <FormGroup className='whats-inside' >
         <Label for="last_name">last name</Label>
-        <Input type="text" value={inputs.last_name} onChange={handleInputs} name="last_name" id="last_name" placeholder="last name" />
+        <Input className='my-form-input' type="text" value={inputs.last_name} onChange={handleInputs} name="last_name" id="last_name" placeholder="Doe" />
       </FormGroup>
-      <FormGroup>
+      <FormGroup className='whats-inside' >
         <Label for="password">Password</Label>
-        <Input type="password" value={inputs.password} onChange={handleInputs} name="password" id="password" placeholder="password" />
+        <Input className='my-form-input' type="password" value={inputs.password} onChange={handleInputs} name="password" id="password" placeholder="SuperSecret1234" />
       </FormGroup>
-      <FormGroup>
-        <Label for="password_confirmation">Password</Label>
-        <Input type="password" value={inputs.password_confirmation} onChange={handleInputs} name="password_confirmation" id="password_confirmation" placeholder="password confirmation" />
+      <FormGroup className='whats-inside' >
+        <Label for="password_confirmation">Password Confirmation</Label>
+        <Input className='my-form-input' type="password" value={inputs.password_confirmation} onChange={handleInputs} name="password_confirmation" id="password_confirmation" placeholder="" />
       </FormGroup>
-      <FormGroup>
+      <FormGroup className='whats-inside' >
         <Label for="user_type">type of user</Label>
-        <Input type="text" value={inputs.user_type} onChange={handleInputs} name="user_type" id="role" placeholder="e.g: CUSTOMER or ADMIN" />
+        <Input className='my-form-input' type="text" value={inputs.user_type} onChange={handleInputs} name="user_type" id="role" placeholder="CUSTOMER or ADMIN" />
       </FormGroup>
-      <Button>Submit</Button>
+      <Button className='user-items-btn' >Submit</Button>
     </Form>
-    <Demo />
+    {/* <Demo /> */}
     </>
     )
 }
-
+/* 
 const SignupForm = Userfront.build({
   toolId: "oarndk"
 });
@@ -79,4 +80,4 @@ class Demo extends React.Component {
   render () {
     return <SignupForm />
   }
-}
+} */

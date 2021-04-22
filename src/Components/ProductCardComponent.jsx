@@ -21,7 +21,9 @@ const ProductCardComponent = ({name, img, desc, id, price}) => {
           {/* <h6 className='product-card-subtitle' >price: ${price}</h6> */}
           <CardSubtitle className='product-card-subtitle' tag="h6" className="text-muted">price: ${price}</CardSubtitle>
           <p className='product-card-text' >{desc}</p>
-          <Button>Button</Button>
+          <div className='product-card-btn-div' >
+          <Button className='user-items-btn' >See more details</Button>
+          </div>
         </CardBody>
       </Card>
       </Link>

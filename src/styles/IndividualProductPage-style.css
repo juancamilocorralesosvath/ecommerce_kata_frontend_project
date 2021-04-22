@@ -1,0 +1,14 @@
+.individual-product-info{
+    background-color: burlywood;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.title-and-description{
+    width: 40%;
+}
+#product-img{
+    height: 15em;
+    width: 25em;
+    border-radius: 20%;
+}
