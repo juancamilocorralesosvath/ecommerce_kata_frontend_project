@@ -6,6 +6,8 @@ import Navbar from '../Components/Navbar/indexNav';
 import ProductCardComponent from '../Components/ProductCardComponent';
 import './../styles/Products-style.css';
 import { CardColumns } from 'reactstrap';
+import SpinnerComponent from '../Components/Spinner';
+
 export default function Products() {
   //  const history = useHistory();
     const [products, setProducts] = useState([]);
@@ -58,6 +60,9 @@ export default function Products() {
                :<h1>Lo sentimos mucho, hubo un problema en el stock</h1>      
             }
         </CardColumns>
+        <div style={{display: 'flex', justifyContent: 'center', alignItems:'center', height:'50vh'}}>
+            <SpinnerComponent color='primary' ></SpinnerComponent>
+        </div>
         </>
     )
 }

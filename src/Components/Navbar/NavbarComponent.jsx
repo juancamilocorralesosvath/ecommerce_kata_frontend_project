@@ -9,10 +9,6 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   NavbarText
 } from 'reactstrap';
 import './NavbarComponent.css'
@@ -74,7 +70,7 @@ const NavbarComponent = (props) => {
             <div className='search-logo-and-input' >
               <img className='search-logo' src={searchLogo} alt="search logo"/>
               <input onChange={(e)=> setSearch(e.target.value) } className='search-bar' type="text" placeholder="search something here!"  />
-              <button onClick={getProduct} >Search</button>
+              <button onClick={getProduct} className='user-items-btn search-btn' >Search</button>
             </div>
           </Nav>
           <div className='user-info-and-cart-logo' >
@@ -91,21 +87,12 @@ const NavbarComponent = (props) => {
             : 
               <div className="user-info-and-cart-logo" >
                  {/*iniciar sesion  */}
-              <UncontrolledDropdown inNavbar>
-              <DropdownToggle className='my-dropdown-toggle-user-items' caret >
-              <button className='user-items-btn' >
-                <img src={userImg} ></img>
-                <h6 style={{color: 'white', display:'inline'}} >Login</h6>
-                </button>
-              </DropdownToggle>
-              <DropdownMenu right>
-                {/* gracias Dios mio! funciono! y lo descubri por pura coincidencia... mas bien, Diosidencia😉 */}
-                {/* aunque realmente, no se como funciona esto, es decir, que sucede al yo pasarle una funcion vacia? en que hace que cambie su comportamiento? */}
-                <DropdownItem  onClick={{}} >
-                <Login />
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
+             {/* gracias Dios mio! */}
+            <button className='user-items-btn' >
+            <img src={userImg} ></img>
+            <Link style={{textDecoration:'none',color:'white'}} to="/login" >Login</Link>
+            </button>
+
               <button className='user-items-btn' >
                 <Link style={{textDecoration:'none',color:'white'}} to="/signup" >Signup</Link>
               </button>

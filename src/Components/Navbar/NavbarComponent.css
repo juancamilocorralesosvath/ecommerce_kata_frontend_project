@@ -25,6 +25,10 @@
     justify-content: center;
     border-radius: 10px;
 }
+.search-btn{
+    color: white;
+    display: inline;
+}
 .rivendel-logo{
     height: 100%;
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import useForm from '../hooks/useForm';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-// import Navbar from '../Components/Navbar/indexNav';
+import Navbar from '../Components/Navbar/NavbarComponent';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import '../styles/Signup-style.css'; 
 /* 
@@ -42,6 +42,7 @@ export default function Login(){
         
         return(
         <>
+            <Navbar></Navbar>
             <Form className='my-awesome-form' onSubmit={handleSubmit}>
             <h1>In order to buy, please Login to your account</h1>
                 <FormGroup className='whats-inside' >
