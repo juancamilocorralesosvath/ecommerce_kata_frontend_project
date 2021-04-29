@@ -65,7 +65,7 @@ const NavbarComponent = (props) => {
         <img src={logo} className='rivendel-logo'  alt="Rivendel logo" ></img>
           <h1 className='brand-title' >Rivendel</h1>
         </NavbarBrand>
-        <NavbarToggler onClick={toggle} />
+        <NavbarToggler className='toggle-btn' onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <div className='search-logo-and-input' >
