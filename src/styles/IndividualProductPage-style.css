@@ -12,3 +12,8 @@
     width: 25em;
     border-radius: 20%;
 }
+@media only screen and (max-width: 425px){
+    .individual-product-info{
+        flex-direction: column;
+    }
+}

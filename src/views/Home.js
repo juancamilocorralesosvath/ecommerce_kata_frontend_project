@@ -13,13 +13,13 @@ export default function Home() {
             <div className='carousel-container' style={{ boxShadow:'10px 10px 10px'}} >
                 <CarouselComponent />
             </div>
-            <div className='container' >
             <Announcements/>
-            </div>
             </main>
+            <footer>
             <Link to='productsgallery' >
             <h1 style={{textAlign:'center'}} >Ready to buy?</h1>
             </Link>
+            </footer>
         </>
     )
 }

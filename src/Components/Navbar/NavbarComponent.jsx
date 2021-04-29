@@ -100,7 +100,7 @@ const NavbarComponent = (props) => {
             }
           </div>
           <img src={shopping_cart} className='shopping-cart' alt="shopping cart" ></img>
-          {user?<NavbarText style={{color:'white'}} >Bienvenid@!</NavbarText>:<NavbarText>;(</NavbarText> }
+          {user?<NavbarText style={{color:'white'}} >Welcome!</NavbarText>:<NavbarText>;(</NavbarText> }
         </Collapse>
       </Navbar>
     </div>

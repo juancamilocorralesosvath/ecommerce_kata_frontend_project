@@ -13,3 +13,8 @@
     align-items: center;
     justify-content: space-around;    
 }
+.my-footer{
+    display: flex;
+    height: 100vh;
+    align-items: flex-end;
+}

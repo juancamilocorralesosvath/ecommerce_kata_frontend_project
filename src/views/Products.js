@@ -45,6 +45,7 @@ export default function Products() {
         <>
         <Navbar />
         {/* this makes the magic */}
+        <main className='products-gallery' >
         <CardColumns>
             {
                products
@@ -60,6 +61,7 @@ export default function Products() {
                :<h1>Lo sentimos mucho, hubo un problema en el stock</h1>      
             }
         </CardColumns>
+        </main>
         <div style={{display: 'flex', justifyContent: 'center', alignItems:'center', height:'50vh'}}>
             <SpinnerComponent color='primary' ></SpinnerComponent>
         </div>

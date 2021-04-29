@@ -4,3 +4,13 @@
 .col{
     flex: 1;
 }
+.products-gallery{
+
+}
+@media only screen and (max-width: 425px){
+    .products-gallery{
+        display: flex;
+        justify-content: center;
+        background-color: gray;
+    }
+}

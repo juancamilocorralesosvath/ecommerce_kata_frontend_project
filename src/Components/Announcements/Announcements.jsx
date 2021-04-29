@@ -8,7 +8,7 @@ import './Announcements.css'
 
 const Announcements = (props) => {
   return (
-    <div className='container' >
+      <>
       <Card body className='my-card-body' >
         <CardTitle tag="h2" className='card-title' >Shop with confidence</CardTitle>
         <CardTitle tag="h5" className='card-title' >all of our partners are renowned buyers</CardTitle>
@@ -24,7 +24,7 @@ const Announcements = (props) => {
         <CardTitle tag="h5" className='card-title' >We use state-of-the-art technology</CardTitle>
         <img src={money} alt='guaranteed-buying-logo' ></img>
       </Card>
-    </div>
+    </>
   );
 };
 
