@@ -10,19 +10,19 @@ const Announcements = (props) => {
   return (
       <>
       <Card body className='my-card-body' >
-        <CardTitle tag="h2" className='card-title' >Shop with confidence</CardTitle>
-        <CardTitle tag="h5" className='card-title' >all of our partners are renowned buyers</CardTitle>
-        <img src={secure} alt='secure-buying-logo' ></img>
+        <CardTitle tag="h2" className='card-title my-title' >Confident Shopping</CardTitle>
+        <CardTitle tag="h5" className='card-title' >renowned members</CardTitle>
+        <img className='Announcement-img' src={secure} alt='secure-buying-logo' ></img>
       </Card>
       <Card body className='my-card-body' >
-        <CardTitle tag="h2" className='card-title' >Best products in the market</CardTitle>
+        <CardTitle tag="h2" className='card-title' >The Best products</CardTitle>
         <CardTitle tag="h5" className='card-title' >We offer the best quality</CardTitle>
-        <img src={trust} alt='trust-buying-logo' ></img>
+        <img className='Announcement-img' src={trust} alt='trust-buying-logo' ></img>
       </Card>
       <Card body className='my-card-body' >
-        <CardTitle tag="h2" className='card-title' >Secure payment method</CardTitle>
-        <CardTitle tag="h5" className='card-title' >We use state-of-the-art technology</CardTitle>
-        <img src={money} alt='guaranteed-buying-logo' ></img>
+        <CardTitle tag="h2" className='card-title' >Secure payment</CardTitle>
+        <CardTitle tag="h5" className='card-title' >state-of-the-art technology</CardTitle>
+        <img className='Announcement-img' src={money} alt='guaranteed-buying-logo' ></img>
       </Card>
     </>
   );

@@ -13,7 +13,9 @@ export default function Home() {
             <div className='carousel-container' style={{ boxShadow:'10px 10px 10px'}} >
                 <CarouselComponent />
             </div>
-            <Announcements/>
+            <article className='announcements-container' >
+                <Announcements/>
+            </article>
             </main>
             <footer>
             <Link to='productsgallery' >

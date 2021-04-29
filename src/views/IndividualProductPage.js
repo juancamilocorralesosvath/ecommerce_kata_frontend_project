@@ -1,7 +1,6 @@
 import React,{ useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
 import Navbar from '../Components/Navbar/indexNav';
 import BuyModal from '../Components/Modals/BuyModal';
 import '../styles/IndividualProductPage-style.css'
@@ -9,7 +8,6 @@ import '../styles/IndividualProductPage-style.css'
 //GRACIAS PADRE, BENDITO Y ALABADO SEAS POR SIEMPRE!
 const ProductCardComponent = () => {
     //const modal = <BuyModal></BuyModal>;
-    const history = useHistory();
     const [product, setProduct] = useState({});
     //aqui obtengo la informacion desde la URL
     const {idProduct} = useParams();
@@ -36,6 +34,7 @@ const ProductCardComponent = () => {
     }
     useEffect(()=>{
         petitionToAPI();
+    // eslint-disable-next-line
       },[]);
       const myAwesomeAndOriginalButton = <button className='user-items-btn' style={{color:'white'}} >
       Buy
@@ -44,7 +43,7 @@ const ProductCardComponent = () => {
     <>
     <Navbar/>
     <div className='individual-product-info' >
-      <img id='product-img' src={product.image} ></img>
+      <img id='product-img' src={product.image} alt='the product that you are about to buy' ></img>
       <div className='title-and-description' >
         <h1>{product.product_name}</h1>
         <p>{product.description}</p>

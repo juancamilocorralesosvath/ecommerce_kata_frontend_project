@@ -32,6 +32,24 @@
         margin-top: 40px;
         padding-bottom: 200px !important;
         height: 30px !important;
-        width: 100% !important;
+    }
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+    .my-card-body{
+        margin-top: 40px;
+        height: 15vh  !important;
+        margin-bottom: 100px;
+    }
+    .Announcement-img{
+        height: 60%;
+    }
+}
+@media only screen and (max-width: 3000px) and (min-width: 1024px){
+    .my-card-body{
+        margin-top: 40px;
+        height: 15vh  !important;
+    }
+    .Announcement-img{
+        height: 40%;
     }
 }

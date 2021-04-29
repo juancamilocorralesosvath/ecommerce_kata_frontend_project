@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Card, CardImg, CardText, CardBody,
+  Card, CardImg, CardBody,
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 import '../styles/ProductCardComponent-style.css'
@@ -19,7 +19,8 @@ const ProductCardComponent = ({name, img, desc, id, price}) => {
         <CardBody className='product-card-body' >
           <CardTitle className='product-card-title' tag="h5">{name}</CardTitle>
           {/* <h6 className='product-card-subtitle' >price: ${price}</h6> */}
-          <CardSubtitle className='product-card-subtitle' tag="h6" className="text-muted">price: ${price}</CardSubtitle>
+          {/* // eslint-disable-next-line */}
+          <CardSubtitle className='product-card-subtitle text-muted' tag="h6">price: ${price}</CardSubtitle>
           <p className='product-card-text' >{desc}</p>
           <div className='product-card-btn-div' >
           <Button className='user-items-btn' >See more details</Button>

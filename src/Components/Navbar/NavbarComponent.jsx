@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import payload from '../../utils/payload';
-import Login from '../../views/Login';
 import {
   Collapse,
   Navbar,
@@ -16,12 +15,11 @@ import logo from './../../Assets/SVG/logo.svg';
 import userImg from '../../Assets/SVG/user.svg';
 import searchLogo from '../../Assets/SVG/search.svg';
 import shopping_cart from '../../Assets/SVG/shopping_cart.svg'
-import axios from 'axios';
 //ojo: para implementar el search bar, el ejemplo lo tenemos en:
 //master-en-code-g2/5_Kata_Frontend/react-router/src/components/NavbarComponent.js /
 const NavbarComponent = (props) => {
-  const [search, setSearch] = useState('');
-  const [results, setResults] = useState([]);
+  /* const [search, setSearch] = useState('');
+  const [results, setResults] = useState([]); */
   const history = useHistory();
   const token = window.localStorage.getItem('token');
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +34,7 @@ const NavbarComponent = (props) => {
       history.push('/createproduct');
     }
   }
-  const getProduct = async() => {
+  /* const getProduct = async() => {
     if(search.length < 1) return alert('write something that I can search on!');
     const ENDPOINT = `https://ecomerce-master.herokuapp.com/api/v1/item`;
     const { data } = await axios.get(ENDPOINT);
@@ -56,6 +54,9 @@ const NavbarComponent = (props) => {
     }
     )
     console.log(productsMeetingTheSearchCriteria)
+  } */
+  const tellTheTruth = () => {
+    alert("The truth is... I haven't implemented the search functionality yet...ups")
   }
   return (
     <div>
@@ -69,8 +70,9 @@ const NavbarComponent = (props) => {
           <Nav className="mr-auto" navbar>
             <div className='search-logo-and-input' >
               <img className='search-logo' src={searchLogo} alt="search logo"/>
-              <input onChange={(e)=> setSearch(e.target.value) } className='search-bar' type="text" placeholder="search something here!"  />
-              <button onClick={getProduct} className='user-items-btn search-btn' >Search</button>
+              {/*  onChange={(e)=> setSearch(e.target.value) }  */}
+              <input className='search-bar' type="text" placeholder="search something here!"  />
+              <button onClick={tellTheTruth} className='user-items-btn search-btn' >Search</button>
             </div>
           </Nav>
           <div className='user-info-and-cart-logo' >
@@ -89,7 +91,7 @@ const NavbarComponent = (props) => {
                  {/*iniciar sesion  */}
              {/* gracias Dios mio! */}
             <button className='user-items-btn' >
-            <img src={userImg} ></img>
+            <img src={userImg} alt="Generic Icon of a user" ></img>
             <Link style={{textDecoration:'none',color:'white'}} to="/login" >Login</Link>
             </button>
 
